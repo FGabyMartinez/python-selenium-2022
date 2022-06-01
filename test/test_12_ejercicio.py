@@ -48,17 +48,17 @@ class TestDownload:
 
     def test_auto_closable_msg(self):
         """Ejercicio 10"""
-            self.driver.get("https://demo.seleniumeasy.com/bootstrap-alert-messages-demo.html")
+        self.driver.get("https://demo.seleniumeasy.com/bootstrap-alert-messages-demo.html")
        
-            locator_btn = (By.ID, "autoclosable-btn-success")
-            btn : WebElement = wait.until(EC.element_to_be_clickable(locator_btn))
-            btn.click()
+        locator_btn = (By.ID, "autoclosable-btn-success")
+        btn : WebElement = wait.until(EC.element_to_be_clickable(locator_btn))
+        btn.click()
 
-            text_one = (By.CLASS_NAME, "alert-autocloseable-success")
+        text_one = (By.CLASS_NAME, "alert-autocloseable-success")
 
-            wait.until(EC.visibility_of_element_located(text_one))
+        wait.until(EC.visibility_of_element_located(text_one))
 
-            assert wait.until(EC.invisibility_of_element_located(text_one))
+        assert wait.until(EC.invisibility_of_element_located(text_one))
 
         
     def teardown_method(self):
